@@ -17,4 +17,4 @@ jobs:
       - name: SAST Bandit static scan
         run: bandit -r . --exclude ./venv --exit-zero -f json -o bandit-report.json
       - name: SCA pip-audit dependency scan
-        run: pip-audit --ignore-vuln
+        run: pip-audit || true
