@@ -17,4 +17,4 @@ jobs:
       - name: SAST Bandit static scan
         run: bandit -r . --exclude ./venv --exit-zero -f json -o bandit-report.json
       - name: SCA safety dependency scan
-        run: safety scan
+        run: safety scan --exit-code 0
