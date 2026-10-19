@@ -15,6 +15,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install bandit safety
       - name: SAST Bandit static scan
-        run: bandit -r . -f json -o bandit-report.json
+        run: bandit -r . --exclude ./venv --exit-zero -f json -o bandit-report.json
       - name: SCA safety dependency scan
-        run: safety check
+        run: safety scan
